@@ -1,0 +1,44 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3.2rem;
+
+}
+
+.sideCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+    width: 250px;
+    border: 1px solid #3065F5;
+    border-radius: 10px;
+    padding-right: 10px;
+    margin: 15px;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    color: #454040;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 500px;
+    border: 1px solid #3065F5;
+    border-radius: 10px;
+    padding-right: 10px;
+    margin: 15px;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    color: #454040;
+}

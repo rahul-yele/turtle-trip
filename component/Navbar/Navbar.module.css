@@ -1,0 +1,62 @@
+.navbar {
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: #000000;
+    /* font-weight: bold; */
+}
+
+.navItem {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.signInAndAccount {
+    display: flex;
+    flex-direction: column;
+}
+
+.signIn {
+    color: #030712;
+}
+
+.account {
+    color: #030712;
+    font-weight: bold;
+}
+
+.heart {
+    position: relative;
+}
+
+.likeCount {
+    position: absolute;
+    top: 8px;
+    right: 63px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.cart {
+    position: relative;
+}
+
+.cartCount {
+    position: absolute;
+    top: 8px;
+    right: 7px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}

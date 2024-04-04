@@ -1,0 +1,67 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    gap: 8px;
+}
+
+.buttonDark {
+    color: #85A8F8;
+    background: #85A8F8;
+    border-radius: 10px;
+    height: 16px;
+    width: 100px;
+}
+
+.buttonLight {
+    color: #EFF3FD;
+    background: #EFF3FD;
+    border-radius: 10px;
+    height: 16px;
+    width: 100px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.heart {
+    color: red;
+}
+
+.button {
+    color: #EFF3FD;
+    background: #EFF3FD;
+    border-radius: 20px;
+    height: 16px;
+    width: 100px;
+}
+
+.largeButton {
+    color: #3563E9;
+    background: #3563E9;
+    border-radius: 10px;
+    height: auto;
+    width: 100px;
+}
+
+.image {
+    height: 50px;
+    width: 50px;
+    color: #85A8F8;
+}
