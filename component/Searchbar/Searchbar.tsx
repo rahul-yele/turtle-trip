@@ -1,16 +1,36 @@
 import { MapPin, Search } from "lucide-react";
 import styles from "./Searchbar.module.css";
 
-export default function Searchbar() {
+interface Props {
+  getData: () => void;
+  setLoading: (val: boolean) => void
+}
+
+
+export default function Searchbar({ getData, setLoading }: Props) {
+
+  function handleKeyDown(event: any) {
+    if (event.key === 'Enter') {
+      setLoading(true)
+      getData()
+    }
+  }
+
+  function handleClick() {
+    setLoading(true)
+    getData()
+  }
+
   return (
     <div className={styles.searchBar}>
       <MapPin className={styles.searchIcon} />
       <input
         type="text"
-        placeholder="I would like to travel to NYC for a weekend for under $500"
+        placeholder="Search flights"
         className={styles.searchInput}
+        onKeyDown={handleKeyDown}
       />
-      <Search className={styles.clearIcon} />
+      <Search className={styles.clearIcon} onClick={handleClick} />
     </div>
   );
 }
