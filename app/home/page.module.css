@@ -7,9 +7,15 @@
 
 .cardList {
     display: flex;
+<<<<<<< HEAD
     /* flex-direction: row-reverse; */
     justify-content: space-evenly;
     /* align-items: center; */
+=======
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+>>>>>>> 0596e94c0a7ed7200b44c87ca4e6f064a6c21e69
     padding-top: 1rem;
 
 }

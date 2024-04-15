@@ -10,7 +10,10 @@ import styles from "./page.module.css";
 import { API_ENDPOINT } from "@/constants";
 import { Response } from "@/types/flight-offer";
 import Spinner from "@/component/Spinner/Spinner";
+<<<<<<< HEAD
 import Filter from "@/component/Filter/Filter";
+=======
+>>>>>>> 0596e94c0a7ed7200b44c87ca4e6f064a6c21e69
 
 export default function Home() {
   const [data, setData] = useState<Response>()
@@ -22,7 +25,10 @@ export default function Home() {
     setData(data)
     setDictionary(data?.dictionaries)
     setLoading(false)
+<<<<<<< HEAD
     
+=======
+>>>>>>> 0596e94c0a7ed7200b44c87ca4e6f064a6c21e69
   }
 
 
@@ -33,6 +39,7 @@ export default function Home() {
         <Searchbar getData={getData} setLoading={setLoading} />
         <Result />
       </div>
+<<<<<<< HEAD
       
       <div>
           
@@ -50,6 +57,12 @@ export default function Home() {
           </div>
         )}
         
+=======
+      <div className={styles.cardList}>
+        {loading ? <Spinner /> : (data && dictionary && data.data.map((item, idx: number) => (
+          <Card data={data?.data[idx]} dictionary={dictionary} className={`hover:bg-blue-100 focus:outline-none shadow-lg ${styles.sideCard}`} />
+        )))}
+>>>>>>> 0596e94c0a7ed7200b44c87ca4e6f064a6c21e69
       </div>
       
 
