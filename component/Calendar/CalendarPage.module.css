@@ -1,0 +1,89 @@
+.calendarContainers{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar{
+    border-radius: 4px;
+    
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.224);
+}
+
+.Checkbox1{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: end;
+}
+.Checkbox1 input{
+    margin-right: 1rem;
+}
+
+.dateInputs, .timeInputs{
+
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dateInputs div, .timeInputs div{
+    width:50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Label{
+    margin-right: 1rem;
+    padding: 0.5em 1em;
+    
+    font-weight: 700;
+
+    border: 1px solid rgba(47, 128, 237, 1);
+    border-radius: 4px;
+    color:rgba(47, 128, 237, 1);
+
+}
+
+.Input{
+    border: 1px solid black;
+    padding: 0.3em 1em;
+    border-radius: 4px;
+    outline : none;
+}
+
+.checkboxGroup{
+    margin-top: 1rem;
+
+}
+
+.checkboxGroup .checkboxOption{
+    margin-top:0.5rem;
+}
+
+.checkboxGroup .checkboxOption input{
+    margin-right: 1rem;
+
+}
+
+
+
+.DateSelection{
+    position: relative;
+  }
+
+.datepickerOverlay{
+    position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.react-datepicker-wrapper {
+    position: absolute;
+    z-index: 1000; /* Ensure the date picker appears above other content */
+  }
+  
+  .react-datepicker {
+    position: relative;
+    z-index: 1001; /* Ensure the calendar dropdown appears above the input field */
+  }

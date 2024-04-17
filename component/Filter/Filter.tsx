@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { CalendarDays } from "lucide-react";
 import style from "./Filter.module.css"
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import Budget from '../Budget/Budget';
 
 
-function Filter() {
+
+function Filter({onCalendarClick, onBudgetClick}) {
 
     const [value, setValue] = useState(100);
     const [departure, setDeparture] = useState(0);
@@ -24,13 +24,13 @@ function Filter() {
         setValue(event.target.value); 
     }; 
   return (
-    <div className="w-1/5   " >
+    <div  >
         <div className={style.Filter}> 
 
             <div className={style.filterSection}> 
                 <div className={style.title}>CALENDAR</div>
                 <div className={style.calendar}>
-                    <CalendarDays size={100} className={style.CalendarIcon}/>
+                    <CalendarDays onClick={onCalendarClick} size={100} className={style.CalendarIcon}/>
                     <div className={style.flexDeparture}>
                         <div className={style.flexCounter}>
                             <button type="button" className={style.counterButton} onClick={()=>handleDepartureClick(departure-1)}>-</button>
@@ -43,10 +43,10 @@ function Filter() {
                     <div className={style.flexArrival}>
                         <div className={style.flexCounter}>
                             <button type="button" className={style.counterButton} onClick={()=>handleArrivalClick(arrival-1)}>-</button>
-                            <div className={style.flexArrivalCount}>{1}</div>
-                            <button type="button" className={style.counterButton} onClick={()=>handleArrivalClick(arrival-1)}>+</button>
+                            <div className={style.flexArrivalCount}>{arrival}</div>
+                            <button type="button" className={style.counterButton} onClick={()=>handleArrivalClick(arrival+1)}>+</button>
                         </div>
-                        Flex Departer
+                        Flex Arrival
                     </div>
 
                     <div className={style.Checkbox}>
@@ -90,6 +90,10 @@ function Filter() {
                         Max.$10000
                     </div>
 
+                    <div>
+                        <button onClick={onBudgetClick}>Advanced Selection</button>
+                    </div>
+
                 </div>
 
                 <div className={style.line} />
@@ -98,7 +102,6 @@ function Filter() {
 
         </div>
 
-        {/* <Calendar defaultActiveStartDate={new Date()} /> */}
     </div>
   )
 }

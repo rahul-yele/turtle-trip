@@ -10,27 +10,41 @@ import styles from "./page.module.css";
 import { API_ENDPOINT } from "@/constants";
 import { Response } from "@/types/flight-offer";
 import Spinner from "@/component/Spinner/Spinner";
-<<<<<<< HEAD
 import Filter from "@/component/Filter/Filter";
-=======
->>>>>>> 0596e94c0a7ed7200b44c87ca4e6f064a6c21e69
+import CalendarPage from "@/component/Calendar/CalendarPage";
+import Budget from "@/component/Budget/Budget";
 
 export default function Home() {
   const [data, setData] = useState<Response>()
   const [dictionary, setDictionary] = useState<Response>()
   const [loading, setLoading] = useState(false)
+  const [showCard, setShowCard] = useState(true)
+  const [showCalendar, setShowCalendar] = useState(false)
+  const [showBudget, setShowBudget] = useState(false)
 
   async function getData() {
     const { data }: any = await axiosInstance.get(API_ENDPOINT.FLIGHT_OFFER)
     setData(data)
     setDictionary(data?.dictionaries)
     setLoading(false)
-<<<<<<< HEAD
     
-=======
->>>>>>> 0596e94c0a7ed7200b44c87ca4e6f064a6c21e69
   }
+  
 
+
+  const handleCalendarVisibility = () => {
+    
+    setShowCalendar(!showCalendar);
+    setShowBudget(false);
+  };
+  
+  const handleBudgetVisibility = () => {
+  
+    setShowBudget(!showBudget);
+    setShowCalendar(false);
+  };
+  
+  
 
   return (
     <>
@@ -39,36 +53,51 @@ export default function Home() {
         <Searchbar getData={getData} setLoading={setLoading} />
         <Result />
       </div>
-<<<<<<< HEAD
       
       <div>
-          
-        {loading ? 
-        (<Spinner /> ): (
+        {loading ? (
+          <Spinner />
+        ) : (
           <div className={styles.cardList}>
-            {data && dictionary ? <Filter/>:''}
-            <div>
-            {(data && dictionary && data.data.map((item, idx: number) => (
-              
-              <Card data={data?.data[idx]} dictionary={dictionary} className={`hover:bg-blue-100 focus:outline-none shadow-lg ${styles.sideCard}`} />
-              
-            )))}
-            </div>
+            <div className={styles.Filter}>{data && dictionary && <Filter  onCalendarClick={handleCalendarVisibility} onBudgetClick={handleBudgetVisibility} />}</div>
+            {/* <div className={styles.content}>
+              {
+                showCard?
+                data &&
+                  dictionary &&
+                  data.data.map((item, idx: number) => (
+                    <Card
+                      key={idx} // Added key prop
+                      data={data?.data[idx]}
+                      dictionary={dictionary}
+                      className={`hover:bg-blue-100 focus:outline-none shadow-lg ${styles.sideCard}`}
+                    />
+                  )):<CalendarPage/> 
+              }
+              <Budget />
+            </div> */}
+            <div className={styles.content}>
+                {(!showCalendar && !showBudget) ? (
+                  data &&
+                  dictionary &&
+                  data.data.map((item, idx: number) => (
+                    <Card
+                      key={idx} // Added key prop
+                      data={data?.data[idx]}
+                      dictionary={dictionary}
+                      className={`hover:bg-blue-100 focus:outline-none shadow-lg ${styles.sideCard}`}
+                    />
+                  ))
+                ) : showCalendar? (
+                  <CalendarPage />
+                ) : showBudget ? (
+                  <Budget />
+                ) : "null"}
+              </div>
           </div>
+          
         )}
-        
-=======
-      <div className={styles.cardList}>
-        {loading ? <Spinner /> : (data && dictionary && data.data.map((item, idx: number) => (
-          <Card data={data?.data[idx]} dictionary={dictionary} className={`hover:bg-blue-100 focus:outline-none shadow-lg ${styles.sideCard}`} />
-        )))}
->>>>>>> 0596e94c0a7ed7200b44c87ca4e6f064a6c21e69
       </div>
-      
-
     </>
   );
 }
-
-
-

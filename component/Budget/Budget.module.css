@@ -1,0 +1,21 @@
+.budget{
+    margin-top: 1rem;
+    display: flex;
+    /* border: 2px solid blue; */
+}
+.flight , .hotel{
+    /* border: 2px solid red; */
+    width: 50%;
+
+}
+
+.priceSlider{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sliderInput{
+    width : 60%;
+    margin: 0 10%;
+}
