@@ -1,8 +1,29 @@
 .calendarContainers{
-    margin-top: 0.5rem;
-    display: flex;
-    justify-content: space-between;
+    margin-top: 4rem;
+    /* display: flex;  */
+    /* justify-content: space-between; */
+    position: relative;
 }
+
+.departureCalendar{
+    position: absolute;
+    bottom: 10px;
+    left:20%;
+    z-index:10;
+
+    border-radius: 8px;
+}
+.arrivalCalendar{
+    position: absolute;
+    bottom: 10px;
+    right:0;
+
+    z-index:10;
+
+    border-radius: 8px;
+
+}
+
 
 .calendar{
     border-radius: 4px;
@@ -11,7 +32,7 @@
 }
 
 .Checkbox1{
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: end;
 }
@@ -49,8 +70,16 @@
     padding: 0.3em 1em;
     border-radius: 4px;
     outline : none;
+    width: 50%;
 }
 
+.Input option:hover{
+    background-color: rgba(47, 128, 237, 1) ;
+}
+
+.Input option:checked{  
+    background-color: rgba(47, 128, 237, 1); 
+}
 .checkboxGroup{
     margin-top: 1rem;
 
@@ -67,23 +96,7 @@
 
 
 
-.DateSelection{
-    position: relative;
-  }
 
-.datepickerOverlay{
-    position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-}
 
-.react-datepicker-wrapper {
-    position: absolute;
-    z-index: 1000; /* Ensure the date picker appears above other content */
-  }
-  
-  .react-datepicker {
-    position: relative;
-    z-index: 1001; /* Ensure the calendar dropdown appears above the input field */
-  }
+
+

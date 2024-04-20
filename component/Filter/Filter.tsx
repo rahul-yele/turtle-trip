@@ -30,7 +30,7 @@ function Filter({onCalendarClick, onBudgetClick}) {
             <div className={style.filterSection}> 
                 <div className={style.title}>CALENDAR</div>
                 <div className={style.calendar}>
-                    <CalendarDays onClick={onCalendarClick} size={100} className={style.CalendarIcon}/>
+                    <CalendarDays size={100} className={style.CalendarIcon}/>
                     <div className={style.flexDeparture}>
                         <div className={style.flexCounter}>
                             <button type="button" className={style.counterButton} onClick={()=>handleDepartureClick(departure-1)}>-</button>
@@ -65,6 +65,10 @@ function Filter({onCalendarClick, onBudgetClick}) {
                             // onChange={onChange}
                         />
                         Red eye
+                    </div>
+
+                    <div>
+                        <button  onClick={onCalendarClick}>Advanced Selection</button>
                     </div>
 
                 </div>

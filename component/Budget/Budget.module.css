@@ -1,11 +1,13 @@
 .budget{
     margin-top: 1rem;
     display: flex;
+    justify-content: space-between;
     /* border: 2px solid blue; */
 }
 .flight , .hotel{
     /* border: 2px solid red; */
-    width: 50%;
+    width: 48%;
+
 
 }
 
@@ -18,4 +20,50 @@
 .sliderInput{
     width : 60%;
     margin: 0 10%;
+    accent-color:#2F80ED;
+
 }
+
+.FlightOptions, .HotelOptions{
+    margin-top: 2rem;
+}
+.FlightOptions div, .HotelOptions div{
+   margin-top: 1rem;
+   display: flex;
+   justify-content: space-between;
+}
+
+.Label{
+    margin-right: 1rem;
+    padding: 0.5em 1em;
+    
+    font-weight: 700;
+
+    border: 1px solid rgba(47, 128, 237, 1);
+    border-radius: 4px;
+    color:rgba(47, 128, 237, 1);
+
+}
+
+.Input{
+    border: 1px solid black;
+    padding: 0.3em 1em;
+    border-radius: 4px;
+    outline : none;
+}
+
+.checkboxGroup{
+    margin-top: 1rem;
+
+}
+
+.checkboxGroup .checkboxOption{
+    margin-top:0.5rem;
+}
+
+.checkboxGroup .checkboxOption input{
+    margin-right: 1rem;
+
+}
+
+

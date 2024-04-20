@@ -5,7 +5,7 @@ import axios, {
     AxiosResponse,
 } from 'axios';
 
-const token = 'n8tXUiGeGTgfBtojfGY59uJo2Ybz'
+const token = 'LB83Ddn8azBqXbGQuNio9krwXSA7'
 
 const axiosInstance: AxiosInstance = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_URL || '',
